@@ -2,13 +2,12 @@
 
 A small generative-art playground for growing a one-of-a-kind animated garden. Change the wildness, bloom size, breeze, and color mood; click the canvas to send a ripple through your world.
 
-## What’s new
+## What’s inside
 - Seeded, deterministic worlds with shareable URLs.
-- Four atmospheric color moods: sunrise, forest, cosmic, and neon.
-- Rich layered scenery with glows, particles, hills, and pointer-triggered ripples.
-- Rare bloom species like daisies, stars, lotus-like flowers, and orb blossoms.
-- Save as PNG, copy a garden link, and pause/resume motion.
-- Keyboard support and reduced-motion awareness.
+- Share links preserve the garden seed, palette, wildness, bloom size, and breeze, so someone else can open the same recipe.
+- Four atmospheric color moods, layered scenery, glow particles, and pointer-triggered ripples.
+- Rare bloom species, save-as-PNG export, pause/resume motion, keyboard support, and reduced-motion awareness.
+- Maker credits: GitHub Copilot and FunctionPsi ([X: @functonpsi](https://x.com/functonpsi)).
 
 ## Run locally
 
@@ -19,8 +18,8 @@ npm run dev -- --host
 
 Open the local URL printed by Vite. To create a production build, run `npm run build`.
 
-## Share a seed
+## Share a garden
 
-Use `?seed=123456&mood=cosmic` on the app URL to open a particular garden. Supported moods are `sunrise`, `forest`, `cosmic`, and `neon`.
+Garden links use query parameters such as `?seed=123456&mood=cosmic&density=42&bloom=1.2&breeze=0.8`. Supported moods are `sunrise`, `forest`, `cosmic`, and `neon`.
 
 Pixel Garden is a lightweight Vite app using the Canvas 2D API; no runtime framework or image assets are required.

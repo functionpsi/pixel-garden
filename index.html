@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./src/styles.css" />
+    <link rel="stylesheet" href="./src/credits.css" />
   </head>
   <body>
     <main class="app-shell">
@@ -44,7 +45,6 @@
           <input id="bloom" class="range" type="range" min="0.6" max="1.7" step="0.1" value="1.1" aria-label="Bloom size" />
           <label class="control-row" for="drift"><span class="control-copy"><span class="control-title">Breeze</span><span class="control-hint">A little movement in the air</span></span><output id="driftValue" for="drift">0.8×</output></label>
           <input id="drift" class="range" type="range" min="0" max="1.8" step="0.1" value="0.8" aria-label="Breeze strength" />
-
           <div class="divider"></div>
           <div class="section-heading palette-heading"><span>02</span><h2>Choose a mood</h2></div>
           <div class="palette-list" role="group" aria-label="Garden color palette">
@@ -55,7 +55,6 @@
           </div>
           <div class="sidebar-footer"><span class="keyboard-hint"><kbd>Space</kbd> grow a new garden</span><button id="motionBtn" class="motion-button" type="button" aria-pressed="false">Ⅱ <span>Pause motion</span></button></div>
         </aside>
-
         <div class="art-column">
           <div class="canvas-frame">
             <canvas id="gardenCanvas" aria-label="An animated generative flower garden. Click anywhere to make a ripple." role="img"></canvas>
@@ -65,9 +64,14 @@
           <div class="art-footer"><span><span class="status-dot"></span> A living, breathing little world</span><button id="rerollBtn" class="reroll-button" type="button"><span aria-hidden="true">↻</span> Grow another</button></div>
         </div>
       </section>
-      <footer class="page-footer"><span>Made of pixels, sunshine &amp; a little randomness.</span><span>Best enjoyed with a curious mind <span aria-hidden="true">♡</span></span></footer>
+      <footer class="page-footer">
+        <span>Made of pixels, sunshine &amp; a little randomness.</span>
+        <span>Best enjoyed with a curious mind <span aria-hidden="true">♡</span></span>
+        <span class="maker-credit">Made by <strong>GitHub Copilot</strong> &amp; <strong>FunctionPsi</strong> · <a href="https://x.com/functonpsi" target="_blank" rel="noopener noreferrer">@functonpsi on X</a></span>
+      </footer>
       <div id="toast" class="toast" role="status" aria-live="polite"></div>
     </main>
+    <script type="module" src="./src/share-state.js"></script>
     <script type="module" src="./src/main.js"></script>
   </body>
 </html>
