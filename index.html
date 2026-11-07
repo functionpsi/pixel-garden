@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#10150f" />
+    <meta name="description" content="Grow a tiny, living world. Create, remix, and save a generative garden in your browser." />
+    <title>Pixel Garden — a little world of your own</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="Pixel Garden home"><span class="brand-mark" aria-hidden="true">✳</span><span>pixel garden</span></a>
+        <div class="top-actions">
+          <span class="live-label"><span class="live-dot"></span> YOUR WORLD, IN BLOOM</span>
+          <button id="shareBtn" class="button button-quiet" type="button" title="Copy a link to this garden">↗ <span>Share</span></button>
+          <button id="saveBtn" class="button button-save" type="button">↓ <span>Save artwork</span></button>
+        </div>
+      </header>
+
+      <section class="intro" aria-labelledby="page-title">
+        <div class="intro-copy">
+          <p class="eyebrow">A small creative experiment</p>
+          <h1 id="page-title">Grow a little <em>something.</em></h1>
+          <p class="intro-text">Every garden is a one-of-a-kind world. Tune the conditions, find your feeling, and see what takes root.</p>
+        </div>
+        <div class="world-card" aria-live="polite">
+          <span class="world-icon" aria-hidden="true">✦</span>
+          <div><span class="card-label">YOUR GARDEN</span><strong id="gardenName">The Quiet Meadow</strong></div>
+          <span class="world-seed" id="seedLabel">SEED 000000</span>
+        </div>
+      </section>
+
+      <section class="workspace" aria-label="Garden creator">
+        <aside class="sidebar">
+          <div class="section-heading"><span>01</span><h2>Set the scene</h2></div>
+          <label class="control-row" for="density"><span class="control-copy"><span class="control-title">Wildness</span><span class="control-hint">How much wants to grow</span></span><output id="densityValue" for="density">32</output></label>
+          <input id="density" class="range" type="range" min="12" max="72" value="32" aria-label="Garden wildness" />
+          <label class="control-row" for="bloom"><span class="control-copy"><span class="control-title">Bloom size</span><span class="control-hint">Small things, big feelings</span></span><output id="bloomValue" for="bloom">1.1×</output></label>
+          <input id="bloom" class="range" type="range" min="0.6" max="1.7" step="0.1" value="1.1" aria-label="Bloom size" />
+          <label class="control-row" for="drift"><span class="control-copy"><span class="control-title">Breeze</span><span class="control-hint">A little movement in the air</span></span><output id="driftValue" for="drift">0.8×</output></label>
+          <input id="drift" class="range" type="range" min="0" max="1.8" step="0.1" value="0.8" aria-label="Breeze strength" />
+
+          <div class="divider"></div>
+          <div class="section-heading palette-heading"><span>02</span><h2>Choose a mood</h2></div>
+          <div class="palette-list" role="group" aria-label="Garden color palette">
+            <button class="palette-button active" data-palette="sunrise" type="button" aria-pressed="true"><span class="swatches sunrise-swatches"></span><span>Soft morning</span><span class="palette-check">✓</span></button>
+            <button class="palette-button" data-palette="forest" type="button" aria-pressed="false"><span class="swatches forest-swatches"></span><span>Fern &amp; moss</span><span class="palette-check">✓</span></button>
+            <button class="palette-button" data-palette="cosmic" type="button" aria-pressed="false"><span class="swatches cosmic-swatches"></span><span>After hours</span><span class="palette-check">✓</span></button>
+            <button class="palette-button" data-palette="neon" type="button" aria-pressed="false"><span class="swatches neon-swatches"></span><span>Electric daydream</span><span class="palette-check">✓</span></button>
+          </div>
+          <div class="sidebar-footer"><span class="keyboard-hint"><kbd>Space</kbd> grow a new garden</span><button id="motionBtn" class="motion-button" type="button" aria-pressed="false">Ⅱ <span>Pause motion</span></button></div>
+        </aside>
+
+        <div class="art-column">
+          <div class="canvas-frame">
+            <canvas id="gardenCanvas" aria-label="An animated generative flower garden. Click anywhere to make a ripple." role="img"></canvas>
+            <div class="canvas-note"><span class="note-sparkle">✳</span> Click anywhere to make a ripple</div>
+            <button id="pulseBtn" class="canvas-action" type="button" aria-label="Send a ripple through the garden" title="Send a ripple through the garden">✳</button>
+          </div>
+          <div class="art-footer"><span><span class="status-dot"></span> A living, breathing little world</span><button id="rerollBtn" class="reroll-button" type="button"><span aria-hidden="true">↻</span> Grow another</button></div>
+        </div>
+      </section>
+      <footer class="page-footer"><span>Made of pixels, sunshine &amp; a little randomness.</span><span>Best enjoyed with a curious mind <span aria-hidden="true">♡</span></span></footer>
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    </main>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

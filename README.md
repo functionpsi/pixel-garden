@@ -1,28 +1,25 @@
 # Pixel Garden
 
-Pixel Garden is a playful generative-art playground built in the browser. It creates animated floral compositions with a live palette, drifting motion, and save-to-image support.
+A small generative-art playground for growing a one-of-a-kind animated garden. Change the wildness, bloom size, breeze, and color mood; click the canvas to send a ripple through your world.
 
-## Features
-- Procedural flower garden generation
-- Palette switching and motion controls
-- Animated, pointer-reactive canvas scenes
-- One-click export to PNG
-- Lightweight Vite app with no heavy dependencies
+## What’s new
+- **Seeded gardens:** each seed deterministically grows the same composition. Garden links include the seed and color mood, so you can share a world and revisit it later.
+- **Living canvas:** layered hills, hand-drawn stems, leaves, flower heads, gentle wind, twinkling sky, and pointer-triggered ripples.
+- **Creative controls:** tune density, bloom size, breeze, four palettes, and pause/resume motion.
+- **Keep and share:** export the artwork as a PNG or copy a link to your garden.
+- **Keyboard and reduced-motion support:** press Space to grow another garden, and motion can be paused.
 
 ## Run locally
 
 ```bash
 npm install
-npm run dev -- --host
+npm run dev
 ```
 
-Then open the local URL shown by Vite in your browser.
+Open the local URL printed by Vite. To create a production build, run `npm run build`.
 
-## Build for production
+## Share a seed
 
-```bash
-npm run build
-```
+Use `?seed=123456&mood=cosmic` on the app URL to open a particular garden. Supported moods are `sunrise`, `forest`, `cosmic`, and `neon`.
 
-## Project idea
-This is a web art toy designed to feel like a tiny digital garden: colorful, playful, and endlessly explorable. The app is intentionally light and self-contained so it is easy to tweak or expand.
+Pixel Garden is a lightweight Vite app using the Canvas 2D API; no runtime framework or image assets are required.
