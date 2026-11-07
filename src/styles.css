@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Pixel Garden — a browser-based generative art playground."
+    />
+    <title>Pixel Garden</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Generative playground</p>
+          <h1>Pixel Garden</h1>
+        </div>
+        <button id="saveBtn" class="primary" type="button">Save PNG</button>
+      </header>
+
+      <main class="panel">
+        <aside class="controls">
+          <section>
+            <h2>Shape</h2>
+            <label class="field">
+              <span>Density</span>
+              <div class="slider-wrap">
+                <input id="density" type="range" min="10" max="80" value="32" />
+                <output id="densityValue">32</output>
+              </div>
+            </label>
+
+            <label class="field">
+              <span>Bloom</span>
+              <div class="slider-wrap">
+                <input id="bloom" type="range" min="0.4" max="1.8" step="0.1" value="1.1" />
+                <output id="bloomValue">1.1</output>
+              </div>
+            </label>
+
+            <label class="field">
+              <span>Drift</span>
+              <div class="slider-wrap">
+                <input id="drift" type="range" min="0.2" max="1.8" step="0.1" value="0.9" />
+                <output id="driftValue">0.9</output>
+              </div>
+            </label>
+          </section>
+
+          <section>
+            <h2>Palette</h2>
+            <div class="palette-row" role="group" aria-label="Palette choices">
+              <button class="palette-button active" data-palette="sunrise" type="button">Sunrise</button>
+              <button class="palette-button" data-palette="forest" type="button">Forest</button>
+              <button class="palette-button" data-palette="cosmic" type="button">Cosmic</button>
+              <button class="palette-button" data-palette="neon" type="button">Neon</button>
+            </div>
+          </section>
+
+          <section class="actions">
+            <button id="rerollBtn" class="secondary" type="button">Reroll</button>
+            <button id="pulseBtn" class="ghost" type="button">Pulse</button>
+          </section>
+        </aside>
+
+        <section class="stage-wrap">
+          <canvas id="gardenCanvas" aria-label="Generative garden canvas"></canvas>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
